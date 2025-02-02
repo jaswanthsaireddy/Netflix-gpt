@@ -6,13 +6,15 @@ import { BG_PAGE } from '../utils/constants'
 const GptSearch = () => {
   return (
     <div>
-        <div className='absolute -z-10'>
+    <div className='fixed -z-10'>
                 <img src= {BG_PAGE}
                     alt='youtube-bg'
-                    className='w-full h-full object-cover'/>
+                    className='h-screen w-screen object-cover'/>
         </div>
+    <div>
         <SearchGpt/>
         <GptSuggestions/>
+    </div>
     </div>
   )
 }

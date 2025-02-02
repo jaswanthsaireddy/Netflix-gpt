@@ -53,14 +53,14 @@ const Header = () => {
       console.log(e.target.value)
     }
   return (
-    <div className=' absolute bg-gradient-to-b from-black z-10 w-full flex justify-between p-2'>
-        <img alt='Netflix_logo'
+    <div className=' absolute bg-gradient-to-b from-black z-10 w-full flex flex-col md:flex-row  justify-between  p-1 md:p-4'>
+        <img alt='Netflix_logo '
             src= {NETFLIX_LOGO}
-            className='w-[8rem] ml-[16rem] my-[1rem] '/>
+            className='w-[8rem] md:w-[12rem] my-0 md:my-[1rem] mx-auto md:ml-2'/>
         
-        {user && <div className='flex items-center mr-10'>
+        {user && <div className='flex items-center justify-between mx-2 md:mx-10'>
           { showGptSearch &&
-            <select className='bg-gray-900 text-white p-2 m-2' onClick={handleLanguageSelector}>
+            <select className='bg-gray-900 text-white p-1 md:p-2  m-0 md:m-2' onClick={handleLanguageSelector}>
               {SUPPORTED_LANGUAGES.map(lang => 
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
@@ -69,7 +69,7 @@ const Header = () => {
             </select>
           }
             <button 
-              className='p-2 m-4 bg-purple-800 text-white'
+              className='p-1 md:p-2 m-1 md:m-4 bg-purple-800 text-white'
               onClick={handleGptSearchClick}
               >
                 {showGptSearch ? "Homepage" : "Gpt Search"}
@@ -77,9 +77,9 @@ const Header = () => {
             <img
                 alt='usericon' 
                 src= {user?.photoURL}
-                className='h-12 w-12'
+                className='h-12 w-12 hidden md:block'
             />
-            <button onClick={handleSignOut} className='px-2 text-white font-bold cursor-pointer'>Sign Out</button>
+            <button onClick={handleSignOut} className='p-1 md:p-2 m-1 md:m-4 text-white  cursor-pointer bg-blue-800'>Sign Out</button>
         </div>}
         
     </div>

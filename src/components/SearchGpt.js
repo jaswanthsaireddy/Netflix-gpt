@@ -47,17 +47,17 @@ const SearchGpt = () => {
 
   return (
     
-    <div className='flex justify-center pt-[8%]'>
-     
+    <div className='flex justify-center  pt-[28%]  md:pt-[8%] flex-row'>
+      
         <form 
-        className='m-2 p-2 bg-black w-[60%] rounded-lg'
+        className='m-2 p-1  md:p-2 bg-black w-full md:w-[60%] rounded-lg flex flex-row  justify-between md:justify-center h-12 md:h-[7rem]'
         onSubmit={(e) => e.preventDefault()}>
-            <input className='p-4 m-4 w-[70%]'
+            <input className=' p-1 md:p-4 m-1 md:m-4 w-[70%]'
                    type='text' 
                    placeholder={lang[selectedLanguage]?.gptPlaceholderSearch}
                    ref={searchText}
             />
-            <button className='px-5 py-3 m-6 bg-red-800 text-white w-[20%] font-bold' 
+            <button className='p-1 md:p-4 m-1 md:m-4 w-[20%] bg-red-800 text-white' 
               onClick={handleGptSearchClick}>
               {lang[selectedLanguage].search}
             </button>

@@ -78,14 +78,14 @@ const handleFormValidator = () => {
   return (
     <div>
         <Header/>
-    <div className='relative h-screen'>
+    <div className='fixed h-screen'>
     <div className=' relative'>
         <img src= {BG_PAGE}
             alt='youtube-bg'
-            className='w-full h-full object-cover'/>
+            className='w-screen h-screen object-cover'/>
     </div>
     <form 
-        className='bg-black  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/12 text-white p-8 m-4  flex flex-col opacity-90'
+        className='bg-black  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full md:w-3/12 text-white p-8 m-2 md:m-4  flex flex-col opacity-90'
         onClick={(e) => e.preventDefault()} >
         <h1 className='text-3xl my-4'>{isSignIn ? "Sign In" : "Sign Up" }</h1>
 

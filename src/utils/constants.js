@@ -21,4 +21,4 @@ export const NETFLIX_LOGO = 'https://help.nflxext.com/helpcenter/OneTrust/oneTru
 
  
  
-  export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+  export const GEMINI_API_KEY = "AIzaSyAEbRyzMiSQmUOSETsq_iQmmYPjnyU-AZI";
