@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "cra-template": "1.2.0",
     "firebase": "^11.1.0",
+    "openai": "^4.82.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "tailwind-scrollbar-hide": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

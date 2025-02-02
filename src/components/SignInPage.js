@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react'
 import { checkFormData } from '../utils/Validations'
 import {  createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { auth } from '../utils/Firebase';
-import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BG_PAGE, USER_ICON } from '../utils/constants';
 
 const SignInPage = () => {
 
@@ -15,7 +15,6 @@ const SignInPage = () => {
     const email = useRef();
     const password = useRef();
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
 const toggleSignInSignUp = () =>{
@@ -40,7 +39,7 @@ const handleFormValidator = () => {
                 const user = userCredential.user;
                 updateProfile(user, {
                     displayName: name.current.value,
-                    photoURL: "https://avatars.githubusercontent.com/u/76946467?v=4"
+                    photoURL: USER_ICON,
                 }).then(() => {
                     const {uid,email,displayName,photoURL} = auth.currentUser;
                     dispatch(addUser({
@@ -49,7 +48,6 @@ const handleFormValidator = () => {
                         displayName:displayName,
                         photoURL:photoURL
                     }))
-                    navigate("/browse")
                 }).catch((error) => {
                     setErrorMessage(error.message);
                 });
@@ -67,8 +65,6 @@ const handleFormValidator = () => {
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user,"You are Sinned in");
-            navigate("/browse")
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -84,7 +80,7 @@ const handleFormValidator = () => {
         <Header/>
     <div className='relative h-screen'>
     <div className=' relative'>
-        <img src='https://assets.nflxext.com/ffe/siteui/vlv3/154a9550-ce07-4e28-819c-63185dd849f8/web/IN-en-20250106-TRIFECTA-perspective_27b02e7c-f668-4639-9e82-1a5485084b2a_large.jpg'
+        <img src= {BG_PAGE}
             alt='youtube-bg'
             className='w-full h-full object-cover'/>
     </div>
