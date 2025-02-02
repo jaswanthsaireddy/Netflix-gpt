@@ -50,7 +50,7 @@ const Header = () => {
 
     const handleLanguageSelector = (e) =>{
       dispatch(changeName(e.target.value))
-      console.log(e.target.value)
+      // console.log(e.target.value)
     }
   return (
     <div className=' absolute bg-gradient-to-b from-black z-10 w-full flex flex-col md:flex-row  justify-between  p-1 md:p-4'>

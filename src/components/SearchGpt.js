@@ -20,25 +20,25 @@ const SearchGpt = () => {
   }
 
   const handleGptSearchClick = async ()=> {
-    console.log(searchText.current.value)
+    // console.log(searchText.current.value)
 
     const geminiQuery = "Act as a movie recommendation system and some suggest 5 movies for the query" + searchText.current.value +"only give the names of the movies, comma seperated and in the format of the example result given ahead. Indiana Jones,Die Hard,Dhookudu,Parugu,Pushpa"
 
     //Gemini AI
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const Geminiresult = await model.generateContent(geminiQuery);
-    console.log(Geminiresult.response.text());
+    // console.log(Geminiresult.response.text());
 
     //converting text into array
     const moviesListGemini = Geminiresult.response.text().split(",");
-    console.log(moviesListGemini);
+    // console.log(moviesListGemini);
 
     //For each movie lets search in TMDB API
     const promiseArray = moviesListGemini.map(movie => searchMovieTMDB(movie)) 
 
     const tmdbMovieResults = await Promise.all(promiseArray);
 
-    console.log(tmdbMovieResults)
+    // console.log(tmdbMovieResults)
 
       dispatch(addGptSuggestedMovieResult({moviesListGemini:moviesListGemini,tmdbMovieResults:tmdbMovieResults}))
   
