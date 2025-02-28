@@ -7,7 +7,7 @@ export const NETFLIX_LOGO = 'https://help.nflxext.com/helpcenter/OneTrust/oneTru
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGVhM2JlZTYyMzc4YzFkM2JjODg0ZGRlNTg4MDljZCIsIm5iZiI6MTczNzM5MDM4Mi4xOSwic3ViIjoiNjc4ZTc5MmUyNTc1YzhhZGIzNDJmZTU3Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.bZSFwvJTfvOOHiDT7RRU0NT91o1DmQqgK-EeakbD65k'  ,
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyN2QxNWZiYjZlM2Y4ZWZhZjY3MTdhMmFlNGMzOTU4OCIsIm5iZiI6MTc0MDc1MzI2OS45MDIwMDAyLCJzdWIiOiI2N2MxYzk3NWJjNjkzNWEwMDFhMjcwZDYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.5nT6T6B4te3cMvlLfPrOs9s4zGErPwDAeagaPfce8U4'  ,
     }
   };
 
